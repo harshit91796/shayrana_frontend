@@ -1,0 +1,12 @@
+.feed{
+    flex: 5;
+    background: rgb(87,130,187);
+    background: linear-gradient(90deg, rgba(87,130,187,1) 49%, rgba(123,157,202,1) 100%);
+    /* height: 100vh; */
+    /* overflow-y: scroll; */
+    
+}
+
+.feedWrapper{
+    padding: 20px;
+}

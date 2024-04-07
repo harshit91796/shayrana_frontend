@@ -1,0 +1,17 @@
+.profileBottomBar{
+    display: flex;
+    justify-content: space-between;
+    /* background: rgba(87, 130, 187, 0.589); */
+    background: linear-gradient(90deg, rgba(87,130,187,9) 0%, rgba(123,157,202,1) 50%);
+    color: black;
+    margin: 20px;
+    gap: -10px;
+    width: 500px;
+    margin-left: 25%;
+    cursor: pointer;
+
+}
+
+.l{
+    color: aliceblue;
+}

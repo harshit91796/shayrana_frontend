@@ -1,0 +1,159 @@
+.registerContainer{
+    width: 100vw;
+    height:100vh;
+    /* margin: 50px; */
+    outline: solid 1px black;
+  background-color: rgb(18, 210, 231);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/person/login.jpg') ; 
+  background-size: cover;
+    
+    
+}
+
+.register{
+    position: absolute;
+    /* margin-left: 30%; */
+    /* margin-top: 10%; */
+    display: flex;
+    width: 800px;
+    /* background-color: aliceblue; */
+    height: 500px;
+    
+   
+}
+.imgDiv{
+    flex:2;
+   
+}
+
+.registerImg{
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem;
+}
+
+.registerLeft{
+    flex: 2;
+    /* display: flex;
+    background-color:transparent; */
+    
+    /* border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); */
+    /* background-color:rgba(150, 150, 150, 0.192); */
+
+    /* justify-content: center; */
+
+   
+    /* padding: 20px; */
+    
+  }
+
+  .register-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* margin-top: 40px; */
+}
+
+.form {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.5rem 2rem 0 rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(0.25rem);
+    height: 100%;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.form-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    color: #ffffff;
+}
+
+.form-input input {
+    height: 2rem;
+    outline: none;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+}
+
+.action-btn {
+    text-align: center;
+}
+
+
+.action-btn {
+    text-align: center;
+}
+
+.btn-register {
+    height: 2rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: rgb(87,130,187);
+}
+
+.or{
+    margin-left: 48%;
+    font-size: 20px;
+}
+
+.btn-register {
+    /* background-color: #0a89e3;  */
+    color: #fff; /* Set the text color */
+    /* padding: 10px 20px; */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease; /* Add a smooth transition effect */
+  }
+  
+  .btn-register:hover {
+    animation: glowing 1s infinite; /* Apply the glowing animation on hover */
+  }
+
+  .btn-register:focus{
+    outline: none;
+  }
+  .btn-register:disabled{
+    cursor: not-allowed;
+  }
+  
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 10px #3498db; /* Initial shadow color (blue in this example) */
+    }
+    50% {
+      box-shadow: 0 0 20px #3498db, 0 0 30px #efe4f1; /* Midway shadow color */
+    }
+    100% {
+      box-shadow: 0 0 10px #3498db; /* Final shadow color */
+    }
+  }
+
+span{
+    text-align: center;
+    font-size: 20px;
+}

@@ -1,0 +1,25 @@
+.profileBottomBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    color: black;
+    margin: 20px;
+    gap: -10px;
+    width: 500px;
+    margin-left: 25%;
+    cursor: pointer;
+
+}
+.profileBottomBarDown{
+    background-color: rgb(255, 246, 127);
+    /* height: 100vh; */
+}
+
+.homeContainer{
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.userContainer{
+    flex: 8.5;
+}
