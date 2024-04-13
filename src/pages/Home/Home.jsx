@@ -4,7 +4,7 @@ import TopBar from '../../components/TopBar'
 import SideBar from '../../components/Sidebar/SideBar'
 import RightBar from '../../components/rightBar/RightBar'
 import Feed from '../../components/Feed/Feed'
-import { AuthContext } from '../../context/authContext'
+// import { AuthContext } from '../../context/authContext'
 
 
 
