@@ -16,7 +16,7 @@ import Saved from './pages/Home/saved/Saved'
 import Tagged from './pages/Home/tagged/Tagged'
 import { useContext } from 'react'
 import { AuthContext } from './context/authContext'
-import Messenger from './pages/messenger/messenger'
+// import Messenger from './pages/messenger/messenger'
 import TestCode from './pages/messenger/TestCode'
 
 
