@@ -53,9 +53,9 @@ function App() {
       <Routes>
         <Route path='/profile/:username/tagged' element={<Tagged/>}/>
       </Routes>
-      <Routes>
-        <Route path='/messenger/:username' element={<Messenger/>}/>
-      </Routes>
+      // <Routes>
+      //   <Route path='/messenger/:username' element={<Messenger/>}/>
+      // </Routes>
   </>
  
 

@@ -138,12 +138,12 @@ console.log('userrrr',user.data.username)
           {/* Dropdown menu */}
           <div className={`hamburgerMenuDropdown ${showDropdown ? 'show' : ''}`}>
             {/* Dropdown items */}
-            <div className='hamburgerMenuItem'>
+           {/* <div className='hamburgerMenuItem'>
               <Link to={`/messenger/${user.data.username}`} onClick={(e) => e.preventdefault()}>
                 <ChatIcon style={{ marginRight: '10px', color: 'purple' }} />
                 Chat
               </Link>
-            </div>
+      </div>*/}
             <div className='hamburgerMenuItem'>
               <PersonIcon style={{ marginRight: '10px', color: 'purple' }} />
               Person
@@ -164,12 +164,12 @@ console.log('userrrr',user.data.username)
           <PersonIcon />
           <span className='topBarIconBadge'>1</span>
         </div>
-        <Link to={`/messenger/${user.data.username}`} onClick={(e) => e.preventdefault()}>
+       {/* <Link to={`/messenger/${user.data.username}`} onClick={(e) => e.preventdefault()}>
           <div className='topBarIconItem'>
             <ChatIcon />
             <span className='topBarIconBadge'>2</span>
           </div>
-        </Link>
+      </Link>*/}
         <div className='topBarIconItem'>
           <NotificationsIcon />
           <span className='topBarIconBadge'>1</span>
