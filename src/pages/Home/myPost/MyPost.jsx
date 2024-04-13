@@ -73,7 +73,7 @@ function MyPost() {
        <User user={user}  />
       
       <div className="bb">
-         <BottomBar/>
+         <BottomBar username={username}/>
       </div>
 
       <div className="grid">

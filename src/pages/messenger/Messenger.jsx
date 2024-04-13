@@ -24,6 +24,31 @@ function Messenger() {
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
 
+
+  const fetchMessage = async () => {
+    if (currentChat) {
+      try {
+        const response = await axiosInstance.get(`/message/${currentChat._id}`);
+        setMessages(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  
+  }
+
+useEffect(() => {
+  setInterval(() => {
+    fetchMessage();
+    
+  }, 1000);
+
+  return () => {
+    clearInterval(fetchMessage);
+
+  }
+}, [currentChat]);
+
   const handleSearch = async () => {
     if (!searchQuery.trim()) {
       setSearchResults([]);

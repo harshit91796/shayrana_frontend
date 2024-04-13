@@ -1,63 +1,54 @@
-
-.topBarContainer{
+.topBarContainer {
     height: 80px;
     width: 100vw;
     background: rgb(87,130,187);
     background: linear-gradient(90deg, rgba(87,130,187,9) 0%, rgba(123,157,202,1) 50%);
-   display: flex;
-   align-items: center;
-   position: sticky;
-   top: 0;
-   z-index: 999;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
-.logoImg{
+.logoImg {
     object-fit: cover;
     width: 500px;
     height: 74px;
     margin-bottom: 20px;
 }
 
-.logo{
-    margin-left: 2rem;
-    font-size: 2rem;
-    font-weight: 600;
-    /* color: #000000; */
-}
-.topBarLeft{
-    flex : 3;
-    /* background-color: antiquewhite; */
-    /* max-width: 60%;
-    min-height: 50%; */
+.topBarLeft {
+    flex: 3;
     width: 44%;
     height: 72px;
-    background-size: cover;
+}
 
+.topBarCenter {
+    flex: 3;
 }
-.topBarCenter{
-    flex : 3
-}
-.topBarRight{
-    flex : 4;
+
+.topBarRight {
+    flex: 4;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
-.topBarLink{
+
+.topBarLink {
     margin-right: 10px;
     cursor: pointer;
     font-size: 24px;
 }
 
-.topBarImg{
+.topBarImg {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
     margin: 10px;
 }
-.searchBar{
+
+.searchBar {
     width: 100%;
     height: 30px;
     background-color: white;
@@ -66,33 +57,30 @@
     align-items: center;
 }
 
-.searchIcon{
+.searchIcon {
     font-size: 20px !important;
     margin-left: 10px;
-    
 }
 
-.searchInput{
+.searchInput {
     border: none;
+    margin-left: 10px;
     width: 70%;
     color: black;
     background-color: white;
 }
-.searchInput:focus{
-    outline : none
+
+.searchInput:focus {
+    outline: none;
 }
 
-.topBarIcons{
-    display: flex;
-}
-
-.topBarIconItem{
+.topBarIconItem {
     margin-left: 15px;
     cursor: pointer;
     position: relative;
 }
 
-.topBarIconBadge{
+.topBarIconBadge {
     width: 15px;
     height: 15px;
     background-color: red;
@@ -104,21 +92,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size : 12px
-    
-}
-
-.topBarImg{
-    width: 32px;
-    height: 32px;
-    border-radius: 5;
+    font-size: 12px;
 }
 
 .searchResults {
     position: absolute;
-    
     top: 60px; /* Adjust top position based on your design */
-    /* left: 0; */
     width: 30%;
     background-color: rgba(255, 255, 255, 0.753);
     border-radius: 5px;
@@ -127,10 +106,9 @@
     overflow-y: auto;
     z-index: 1000;
     backdrop-filter: blur(0.25rem);
-    
-  }
-  
-  .searchResultItem {
+}
+
+.searchResultItem {
     align-items: center;
     display: flex;
     padding: 10px;
@@ -138,42 +116,155 @@
     cursor: pointer;
     color: #A62CC2;
     transition: background-color 0.3s ease;
-  }
+}
 
-  .pImage img{
+.pImage img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
     margin: 10px;
-  }
-  
-  .searchResultItem:hover {
-    background-color: #f0f0f0;
-  }
-  
-  /* .btn{
-    height: 30px;
-    text-align: center;
-    margin: 0 auto;
-    vertical-align: middle;
-    display: inline-block;
-    text-align: center;
-  } */
+}
 
- .searchBar button{
+.searchResultItem:hover {
+    background-color: #f0f0f0;
+}
+
+.searchBar button {
     font-size: 11px;
     margin-left: 25px;
     background-color: #A62CC2;
     text-decoration: none;
     outline-style: none;
     border: none;
-  }
+}
 
-  .visible {
+.visible {
     display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Your existing CSS */
+
+.hamburgerMenu {
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: -30px;
+    padding: 0;
   }
   
-  .hidden {
-    display: none;
+  .hamburgerMenuIcon {
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    /* background-color: #ebeadd; */
+    margin: 0;
+    padding: 0;
+    border-radius: 60px;
   }
+  
+  .hamburgerMenuDropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .hamburgerMenuItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hamburgerMenuItem:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .hamburgerMenuDropdown.show {
+    display: flex;
+  }
+  
+  /* Media Query for Responsive Design */
+  @media (max-width: 768px) {
+    .topBarContainer {
+      padding: 10px;
+      width: 100%;
+      
+    }
+
+    .fa-bars{
+      font-size: 100px;
+       height: 100%;
+       width: 100%;
+    }
+
+    .topBarRight .topBarIconItem {
+      display: none;
+    }
+  
+    .topBarLinks {
+      display: none;
+    }
+  
+    .searchBar {
+      display: none;
+    }
+  
+    .hamburgerMenu {
+      display: flex;
+    }
+
+    .hamburgerMenuIcon {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+    }
+
+    .logoImg {
+      margin-left: -120px;
+    }
+   
+    .topBarImg {
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      margin-left: -10px;
+    }
+
+   
+
+    .clicked {
+      font-size: 100px;
+      width: 100%;
+      color: purple; /* Change to the desired color */
+      transition: color cubic-bezier(0.165, 0.84, 0.44, 1) ease; /* Transition duration: 1 second */
+      animation: glowing 3s infinite; /* Apply the glowing animation */
+  transition: color 0.5s ease; /* Transition duration for color change */
+    }
+
+    @keyframes glowing {
+      0% { 
+        box-shadow: 0 0 5px #debce5; /* Initial glowing color */
+      }
+      50% {
+        box-shadow: 0 10 50px #d9b7e4; /* Glowing color */
+      }
+      100% {
+        box-shadow: 0 50 5px #dac9de; /* Back to initial glowing color */
+      }
+    }
+  }
+  

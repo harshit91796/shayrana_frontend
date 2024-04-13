@@ -64,3 +64,21 @@ background: linear-gradient(90deg, rgb(46, 69, 99) 99%, rgba(123,157,202,1) 100%
    list-style: none;
 
 }
+
+
+@media screen and (max-width: 768px) {
+    .sideBar{
+        display: none;
+
+    }
+
+
+  }
+  
+  /* Responsive Styles for Phones */
+  @media screen and (max-width: 480px) {
+    .sideBar {
+      display: none;
+    }
+  }
+  

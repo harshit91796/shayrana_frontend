@@ -10,3 +10,53 @@
 .feedWrapper{
     padding: 20px;
 }
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+    .feed{
+        /* flex: 1; */
+        height: 100vh;
+        overflow-y: scroll;
+        position: sticky;
+        top: 50px;
+
+    }
+
+    .feedWrapper{
+        padding: 20px;
+        /* height: 100vh; */
+        overflow-y: scroll;
+
+
+    }
+  
+    .share{
+
+    }
+
+
+  }
+  
+  /* Responsive Styles for Phones */
+  @media screen and (max-width: 480px) {
+    .feed {
+      flex: none;
+      /* height: 100vh; */
+      width: 100%;
+      overflow-y: scroll;
+      position: sticky;
+      top: 50px;
+
+    } 
+
+    .feedWrapper{
+      padding: 20px;
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll;
+
+    }
+
+  }
+  

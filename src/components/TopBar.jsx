@@ -1,31 +1,41 @@
-import { Chat, Close, Notifications, Person, Search } from '@mui/icons-material'
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import './topBar.css'
-import { Link } from 'react-router-dom'
-import { AuthContext } from '../context/authContext'
-import axiosInstance from '../api'
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import './topBar.css';
+
+import { AuthContext } from '../context/authContext';
+import axiosInstance from '../api';
+import PersonIcon from '@mui/icons-material/Person';
+import ChatIcon from '@mui/icons-material/Chat';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { AcUnit, Close, Search } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 function TopBar() {
-     //  const name1 = 'harshit rajput'
-     const {user} = useContext(AuthContext)
-     // const username = user.username
-     if(!user ){
-          return <div className="loding">loding</div>
-        }
-     //    else{
-     //      console.log(user)
-     //    }
-     console.log(user.data.username)
-
-     const [searchQuery, setSearchQuery] = useState('');
+  const { user } = useContext(AuthContext);
+  // const username = user.username
+  if(!user ){
+    return <div className="loding">loding</div>
+  }
+//    else{
+//      console.log(user)
+//    }
+console.log('userrrr',user.data.username)
+  const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const searchRef = useRef(null);
 
+  const handleClick = () => {
+    setClicked(true);
+    toggleDropdown();
+    setTimeout(() => setClicked(false), 1000); // Reset the click state after 1 second
+  };
+
+
   const handleBlur = () => {
-    // Hide search results when the input field loses focus
     setTimeout(() => {
-      if (!document.activeElement.classList.contains("close")) {
+      if (!document.activeElement.classList.contains('close')) {
         setShowSearchResults(false);
       }
     }, 0);
@@ -36,12 +46,12 @@ function TopBar() {
       setShowSearchResults(false);
     }
   };
-  
 
-  const closeSearch =()=>{
+  const closeSearch = () => {
     setShowSearchResults(false);
+    setSearchResults([]);
     setSearchQuery('');
-  }
+  };
 
   const handleSearch = async () => {
     if (!searchQuery.trim()) {
@@ -67,78 +77,109 @@ function TopBar() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-     
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <div className='topBarContainer'>
-       <div className='topBarLeft'>
-           <Link to='/'>
-             <img src='/assets/person/logo1.png' className='logoImg'/>
-           </Link>
-       </div>
-       <div className='topBarCenter'>
-         <div className="searchBar" ref={searchRef}>
-         <Search color='warning'/>
-         <input value={searchQuery}
-         onChange={(e) => {
-          setSearchQuery(e.target.value);
-          handleSearch(); // Trigger search on every input change
-        }}
-        onBlur={handleBlur}
-          placeholder='search for friend , post or video' className='searchInput'/>
+      <div className='topBarLeft'>
+        <Link to='/'>
+          <img src='/assets/person/logo1.png' className='logoImg' alt='logo' />
+        </Link>
+      </div>
+      <div className='topBarCenter'>
+        <div className='searchBar' ref={searchRef}>
+          {/* Search input */}
+          <Search style={{ color: 'purple' }}/>
+          <input
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              handleSearch(); // Trigger search on every input change
+            }}
+            onBlur={handleBlur}
+            placeholder='Search for friend, post, or video'
+            className='searchInput'
+          />
+          {/* Close button */}
           <div className="close">
-         {searchResults.length > 0 ? <Close style={{ color: 'purple' , marginLeft : '150px' }} onClick={() => setShowSearchResults(false)} /> : ""}
+         {searchResults.length > 0 ? <Close style={{ color: 'purple' , marginLeft : '150px' }} onClick={closeSearch} /> : ""}
           </div>
-         <button className='btn' onClick={handleSearch} >Search</button>
-         </div>
-         <div
-              className={`searchResults ${
-                showSearchResults ? "visible" : "hidden"
-              }`}
-            ></div>
-         {searchResults.length > 0 && (
-          <div className='searchResults' >
+          {/* Search button */}
+          <button className='btn' onClick={handleSearch}>
+            Search
+          </button>
+        </div>
+        {/* Search results */}
+        <div className={`searchResults ${showSearchResults ? 'visible' : 'hidden'}`}></div>
+        {searchResults.length > 0 && (
+          <div className='searchResults'>
             {searchResults.map((result) => (
-              <Link to={`/profile/${result.username}/myPost`} onClick={(e) => e.preventdefault()} key={result._id}>
+              <Link to={`/profile/${result.username}/myPost`} key={result._id}>
                 <div className='searchResultItem'>
-                <div className="pImage">
-                 <img src="../../../public/assets/person/1.jpg" alt="" />
-                </div>
-                <div className="sName">
-                {result.username}
-                </div>
-                
+                  <div className='pImage'>
+                    <img src="../../../public/assets/person/1.jpg" alt="" />
+                  </div>
+                  <div className='sName'>{result.username}</div>
                 </div>
               </Link>
             ))}
           </div>
         )}
-       </div>
-       <div className='topBarRight'>
-           <div className='topBarLinks'>
-                <span className='topBarLink'>Homepage</span>
-                <span className='topBarLink'>Timeline</span>
-           </div>
-           <div className='topBarIconItem'>
-                <Person/>
-                <span className='topBarIconBadge'>1</span>
-           </div>
-           <Link to={`/messenger/${user.data.username}`} onClick={(e) => e.preventdefault()}>
-           <div className='topBarIconItem'>
-           <Chat/>
-           <span className='topBarIconBadge'>2</span>
       </div>
-           </Link>
-          
-           <div className='topBarIconItem'>
-                <Notifications/>
-                <span className='topBarIconBadge'>1</span>
-           </div>
-           <Link to={`/profile/${user.data.username}/myPost`} onClick={(e) => e.preventdefault()}><img src='../../public/assets/person/nate.jpg' alt='' className='topBarImg'/>
-           </Link>
-
-       </div>
+      <div className='topBarRight'>
+        {/* Hamburger icon */}
+        <div className='hamburgerMenu'>
+        <div className={`hamburgerMenuIcon ${clicked ? 'clicked' : ''}`} onClick={handleClick}>
+        <AcUnit style={{ fontSize: '40px' }} />
+      </div>
+          {/* Dropdown menu */}
+          <div className={`hamburgerMenuDropdown ${showDropdown ? 'show' : ''}`}>
+            {/* Dropdown items */}
+            <div className='hamburgerMenuItem'>
+              <Link to={`/messenger/${user.data.username}`} onClick={(e) => e.preventdefault()}>
+                <ChatIcon style={{ marginRight: '10px', color: 'purple' }} />
+                Chat
+              </Link>
+            </div>
+            <div className='hamburgerMenuItem'>
+              <PersonIcon style={{ marginRight: '10px', color: 'purple' }} />
+              Person
+            </div>
+            <div className='hamburgerMenuItem'>
+              <NotificationsIcon style={{ marginRight: '10px', color: 'purple' }} />
+              Notifications
+            </div>
+          </div>
+        </div>
+        {/* Other elements */}
+        <div className='topBarLinks'>
+          <span className='topBarLink'>Homepage</span>
+          <span className='topBarLink'>Timeline</span>
+        </div>
+        {/* Icons */}
+        <div className='topBarIconItem'>
+          <PersonIcon />
+          <span className='topBarIconBadge'>1</span>
+        </div>
+        <Link to={`/messenger/${user.data.username}`} onClick={(e) => e.preventdefault()}>
+          <div className='topBarIconItem'>
+            <ChatIcon />
+            <span className='topBarIconBadge'>2</span>
+          </div>
+        </Link>
+        <div className='topBarIconItem'>
+          <NotificationsIcon />
+          <span className='topBarIconBadge'>1</span>
+        </div>
+        <Link to={`/profile/${user.data.username}/myPost`}>
+          <img src='../../public/assets/person/nate.jpg' alt='' className='topBarImg' />
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
 
-export default TopBar
+export default TopBar;

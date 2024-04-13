@@ -25,3 +25,21 @@ background: linear-gradient(90deg, rgba(87,130,187,1) 49%, rgba(123,157,202,1) 1
     /* justify-content: space-between; */
     align-items: center;
   }
+
+  /* responsive */
+
+  @media screen and (max-width: 768px) {
+    .rightBar {
+      display: none;
+    }
+
+
+  }
+  
+  /* Responsive Styles for Phones */
+  @media screen and (max-width: 480px) {
+    .rightBar {
+      display: none;
+    }
+  }
+  
