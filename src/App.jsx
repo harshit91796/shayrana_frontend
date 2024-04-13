@@ -16,6 +16,7 @@ import Saved from './pages/Home/saved/Saved'
 import Tagged from './pages/Home/tagged/Tagged'
 import { useContext } from 'react'
 import { AuthContext } from './context/authContext'
+import Messenger from './pages/messenger/Messenger'
 
 // import TestCode from './pages/messenger/TestCode'
 
@@ -53,7 +54,9 @@ function App() {
       <Routes>
         <Route path='/profile/:username/tagged' element={<Tagged/>}/>
       </Routes>
-      
+      <Routes>
+        <Route path='/messenger/:username' element={<Messenger/>}/>
+      </Routes>
   </>
  
 

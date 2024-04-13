@@ -124,7 +124,7 @@
 /* Responsive Styles for Phones */
 @media screen and (max-width: 480px) {
   .messenger {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 
   .chatBox {
