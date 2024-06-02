@@ -36,11 +36,11 @@ function Login() {
                   <div className="input-group">
                   <div className="form-input">
                       <label htmlFor="email">Email</label>
-                      <input type="email" id='email' required ref={email} placeholder="Enter email"/>
+                      <input className='emailInput' type="email" id='email' required ref={email} placeholder="Enter email"/>
                    </div>
                       <div className="form-input">
                           <label htmlFor="password">Password</label>
-                          <input type="password" ref={password} minLength={6} required id='password' placeholder="Enter first password"/>
+                          <input className='passwordInput' type="password" ref={password} minLength={6} required id='password' placeholder="Enter first password"/>
                      </div>
 
                       <div className="action-btn">

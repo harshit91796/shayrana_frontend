@@ -1,0 +1,60 @@
+.audioModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+
+}
+
+.audioModal-content{
+    background: rgba(87, 130, 187, 0.225);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    height: 400px;
+    position: relative;
+    color: white;
+    z-index: 10000;
+    backdrop-filter: blur(0.25rem);
+
+}
+
+.audioModal-content img{
+    width: 100%;
+    height: 80%;
+    object-fit:contain;
+    border-radius: 5px;
+
+}
+
+.audioModal-content audio{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+
+.closeButtonAudioModal{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.closeButtonAudioModal:hover{
+    color: rgb(217, 0, 255);
+    font-size: 40px;
+}

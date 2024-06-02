@@ -1,0 +1,19 @@
+/* src/components/AudioBar.css */
+
+.audioBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #282828;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  .audioDesc {
+    margin-left: 10px;
+  }
+  

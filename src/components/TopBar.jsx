@@ -97,7 +97,8 @@ console.log('userrrr',user.data.username)
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
-              handleSearch(); // Trigger search on every input change
+              handleSearch();
+
             }}
             onBlur={handleBlur}
             placeholder='Search for friend, post, or video'
@@ -117,7 +118,7 @@ console.log('userrrr',user.data.username)
         {searchResults.length > 0 && (
           <div className='searchResults'>
             {searchResults.map((result) => (
-              <Link to={`/profile/${result.username}/myPost`} key={result._id}>
+              <Link to={`/profile/${result.username}/myPost`} onClick={(e) => e.preventdefault()} key={result._id}>
                 <div className='searchResultItem'>
                   <div className='pImage'>
                     <img src="../../../public/assets/person/1.jpg" alt="" />
@@ -174,7 +175,7 @@ console.log('userrrr',user.data.username)
           <NotificationsIcon />
           <span className='topBarIconBadge'>1</span>
         </div>
-        <Link to={`/profile/${user.data.username}/myPost`}>
+        <Link to={`/profile/${user.data.username}/myPost`} onClick={(e) => e.preventdefault()}>
           <img src='../../public/assets/person/nate.jpg' alt='' className='topBarImg' />
         </Link>
       </div>

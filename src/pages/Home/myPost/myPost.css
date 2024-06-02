@@ -141,3 +141,25 @@
     box-shadow: 0 0.5rem 2rem 0 rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(0.25rem);
  }
+
+ .listItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .listItemAvatar {
+    margin-right: 16px;
+  }
+  
+  .listItemText {
+    flex-grow: 1;
+    margin-left: 16px;
+  }
+  
+  .audioPlayer {
+    flex-grow: 1;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  

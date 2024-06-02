@@ -79,6 +79,16 @@ box-shadow: -2px 6px 54px 0px rgba(0,0,0,0.75);
     cursor: pointer;
 }
 
+.recordTime{
+    font-size: 12px;
+    margin-left: 0px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
 /* responsive */
 
 @media screen and (max-width: 768px) {

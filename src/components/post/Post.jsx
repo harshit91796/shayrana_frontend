@@ -15,6 +15,7 @@ function Post({post}) {
   const {user} = useContext(AuthContext)
   // const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   console.log(user)
+  console.log('posyttabudaa',post)
   
   useEffect(() => {
     setIsLiked(post.likes.includes(user.data._id));
@@ -79,7 +80,14 @@ function Post({post}) {
                 </div>
           </div>
           <div className="post">
-          <img  src="../../public/assets/person/5.jpg"/>
+          <img  src={post.imgUrl}/>
+          </div>
+          <div className='audioDiv' style={{width:'100%'}}>
+            <audio controls 
+              style={{width:'100%'}}
+            >
+              <source src={post.audioUrl} type="audio/ogg"/>
+            </audio>
           </div>
           <div className="postAction">
                <div className="postIcon"  onClick={likeHandler}>
