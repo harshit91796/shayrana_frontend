@@ -30,18 +30,16 @@ box-shadow: -2px 6px 54px 0px rgba(0,0,0,0.75);
 .shareInput{
     border: none;
     width: 80%;
+    height: 2rem;
     color: rgb(10, 12, 14);
     background-color: #f5f5f5;
-}
-.shareInput{
     outline: none;
+    border-radius: 1rem;
 }
+
 
 .shareBottom{
     padding: 10px;
-    
-  
-
 }
 
 .shareOptions{

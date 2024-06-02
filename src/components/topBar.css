@@ -12,9 +12,8 @@
 
 .logoImg {
     object-fit: cover;
-    width: 500px;
+    width: 350px;
     height: 74px;
-    margin-bottom: 20px;
 }
 
 .topBarLeft {
@@ -50,7 +49,7 @@
 
 .searchBar {
     width: 100%;
-    height: 30px;
+    height:2.5rem;;
     background-color: white;
     border-radius: 30px;
     display: flex;
